@@ -1,5 +1,6 @@
 import {expect} from 'chai'
 import {EuclideanDistance, ManhattanDistance, HammingDistance} from '../distance/Distance'
+import {_Math} from '../_Math/_math'
 
 describe('Euclidean Distance', () => {
     it('Should Return a 3.605551275463989', () => {
@@ -27,11 +28,47 @@ describe('Hamming Distance', () => {
         const d = HammingDistance([5,4,9], [1,7,9])
         expect(d).to.be.equal(0.3333333333333333)
     })
-})
-
-describe('Hamming Distance', () => {
     it('Should be 0.5', () => {
         const d = HammingDistance([1,2], [1,100])
         expect(d).to.be.equal(0.5)
+    })
+})
+
+
+describe('Line', () => {
+    it('should be [54, 66, 78, 90, 102, 114, 126, 138, 150, 162, 174, 186]', () => {
+        const months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+        const _math = new _Math()
+        const y = _math.Line(months, 12, 42)
+        expect(y).to.deep.equal([54, 66, 78, 90, 102, 114, 126, 138, 150, 162, 174, 186])
+    })
+})
+
+describe('Loss', () => {
+    let x = [1, 2, 3]
+    let y = [5, 1, 3]
+    const _math = new _Math()
+    it('should be 17', () => {
+        const line = _math.Line(x, 1, 0)
+        const loss = _math.Loss(y, line)
+        expect(loss).to.be.equal(17)
+    })
+    it('should be 13.5', () => {
+        const line = _math.Line(x, 0.5, 1)
+        const loss = _math.Loss(y, line)
+        expect(loss).to.be.equal(13.5)
+    })
+})
+
+describe('Gradient Descent', () => {
+    let months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    let revenue = [52, 74, 79, 95, 115, 110, 129, 126, 147, 146, 156, 184]
+    const _math = new _Math()
+    const {b, m} = _math.GradientDescent(months, revenue, 0, 100)
+    it('b - should be 18.970382485915874', () => {
+        expect(b).to.be.equal(18.970382485915874)
+    })
+    it('m - should be 14.15401609486821', () => {
+        expect(m).to.be.equal(14.15401609486821)
     })
 })
