@@ -1,10 +1,15 @@
-import express, {Application} from 'express'
-// import {EuclideanDistance} from './regression/Distance'
+import {init as server} from './lib/server'
+import workers from './lib/cluster'
+import cluster from 'cluster'
 
-const app: Application = express()
+//* Look for our cluster
+function init() {
+    if (cluster.isMaster) {
+        workers()
+    } else {
+        server(8080)
+    }
+}
 
-const PORT = 8080
-
-app.listen(PORT, () => {
-    console.log(`Server running: http://localhost:${PORT}`)
-})
+//* Run Server
+init()
