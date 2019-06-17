@@ -55,3 +55,19 @@ export function GradiendDescentSlope(x_axis: Array<number>, y_axis: Array<number
   }
   return gradient
 }
+
+/**
+ * @description: receive a data of any kind and return his type
+ * @param data 
+ */
+export function dataType(data: any): any {
+  return typeof data
+}
+
+export function createDimensionalArray(rows: number, cols: number): any {
+  let array = new Array(cols)
+  for (let i = 0; i < cols; i++) {
+    array[i] = new Array(rows)
+  }
+  return array
+}

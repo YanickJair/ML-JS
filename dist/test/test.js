@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const chai_1 = require("chai");
 const Distance_1 = require("../distance/Distance");
 const _math_1 = require("../_Math/_math");
+const helper_1 = require("../utils/helper");
 describe('Euclidean Distance', () => {
     it('Should Return a 3.605551275463989', () => {
         const d = Distance_1.EuclideanDistance([1, 2], [4, 0]);
@@ -65,4 +66,13 @@ describe('Gradient Descent', () => {
     it('m - should be 14.15401609486821', () => {
         chai_1.expect(m).to.be.equal(14.15401609486821);
     });
+});
+describe('Data Type', () => {
+    it('Shoud return Number', () => {
+        const res = helper_1.dataType(1230);
+        chai_1.expect(res).to.be.equal('number');
+    });
+});
+describe('Data Frame', () => {
+    it('should return ', () => { });
 });

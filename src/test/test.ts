@@ -1,6 +1,9 @@
 import {expect} from 'chai'
 import {EuclideanDistance, ManhattanDistance, HammingDistance} from '../distance/Distance'
 import {_Math} from '../_Math/_math'
+import {DataFrame} from '../_data/DataFrame'
+
+import {dataType} from '../utils/helper'
 
 describe('Euclidean Distance', () => {
     it('Should Return a 3.605551275463989', () => {
@@ -71,4 +74,16 @@ describe('Gradient Descent', () => {
     it('m - should be 14.15401609486821', () => {
         expect(m).to.be.equal(14.15401609486821)
     })
+})
+
+
+describe('Data Type', () => {
+    it('Shoud return Number', () => {
+        const res = dataType(1230)
+        expect(res).to.be.equal('number')
+    }) 
+})
+
+describe('Data Frame', () => {
+    it('should return ', () => {})
 })

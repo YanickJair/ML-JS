@@ -65,3 +65,19 @@ function GradiendDescentSlope(x_axis, y_axis, m, b) {
     return gradient;
 }
 exports.GradiendDescentSlope = GradiendDescentSlope;
+/**
+ * @description: receive a data of any kind and return his type
+ * @param data
+ */
+function dataType(data) {
+    return typeof data;
+}
+exports.dataType = dataType;
+function createDimensionalArray(rows, cols) {
+    let array = new Array(cols);
+    for (let i = 0; i < cols; i++) {
+        array[i] = new Array(rows);
+    }
+    return array;
+}
+exports.createDimensionalArray = createDimensionalArray;
