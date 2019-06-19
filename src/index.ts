@@ -5,17 +5,14 @@ import {DataFrame} from './_data/DataFrame'
 
 //* Look for our cluster
 function init(cb?: any) {
-    if (cluster.isMaster) {
-        workers()
-    } else {
-        server(8080)
-
-        const df = new DataFrame()
-        const d = [['Alex',10],['Bob',12],['Clarke',13]]
-        const res = df.DataFrame(d, null, ['Name', 'Age'])
-        console.log(res)
-    }
+    server(8080)
+    cb()
 }
 
 //* Run Server
-init()
+init(() => {
+    const df = new DataFrame()
+    const data = {Name: ['Tom', 'Jack', 'Steve', 'Ricky'], Age:[28,34,29,42]}
+    const res = df.DataFrame(data)
+    console.log(res['Name'])
+})
