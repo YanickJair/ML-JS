@@ -18,7 +18,7 @@ To do so, we are going to use Statistics fundamentals and Econometrics
 
 * npm test
 
-# Run programn in Devlopment mode
+# Run programn in Development mode
 
 * npm run dev
 
