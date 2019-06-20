@@ -4,6 +4,6 @@
  */
 
 //* Interface for our DataFrame object
-export interface Frame {
+export interface ArrayHelper {
     [key: string]: any;
 }

@@ -1,6 +1,6 @@
 import * as _ from 'lodash'
 import {dataType} from '../utils/helper'
-import { Frame } from '../_interface/_interface'
+import { ArrayHelper as Frame } from '../_interface/_interface'
 /**
  * @description
  *  *   Based on Rectangular Data, DataFrame is essentially a two-dimensional
@@ -11,8 +11,8 @@ import { Frame } from '../_interface/_interface'
  */
 
 export class DataFrame {
-    dtype: any
-    frame!: Frame;
+    private dtype: any
+    private frame!: Frame;
 
     /**
      * @description note that we're returning our Frame interface
