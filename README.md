@@ -18,6 +18,14 @@ To do so, we are going to use Statistics fundamentals and Econometrics
 
 * npm test
 
-# Run programn
+# Run programn in Devlopment mode
+
+* npm run dev
+
+# Compile to JavaScript
+
+* tsc
+
+# Run compiled program
 
 * npm start
