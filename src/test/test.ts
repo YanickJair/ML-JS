@@ -1,7 +1,5 @@
 import {expect} from 'chai'
-import {EuclideanDistance, ManhattanDistance, HammingDistance} from '../distance/Distance'
-import {_Math} from '../_Math/_math'
-import {DataFrame} from '../_data/DataFrame'
+import {EuclideanDistance, ManhattanDistance, HammingDistance} from '../lib/Distance'
 
 import {dataType} from '../utils/helper'
 
@@ -82,8 +80,4 @@ describe('Data Type', () => {
         const res = dataType(1230)
         expect(res).to.be.equal('number')
     }) 
-})
-
-describe('Data Frame', () => {
-    it('should return ', () => {})
 })

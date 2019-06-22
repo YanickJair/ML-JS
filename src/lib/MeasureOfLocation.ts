@@ -4,7 +4,7 @@ import {ArrayHelper as Measures} from '../_interface/_interface'
  * @description Provide the Analyst with some quantitative values 
  * of where the center, or some other location, of data is located.
  */
-export class LocationMeasure {
+export class MeasureOfLocation {
     private data!: Array<number>
     private measures!: Measures
     private mean!: Measures
@@ -66,24 +66,5 @@ export class LocationMeasure {
 
         }
         return this.median
-    }
-
-    Variance(): Measures {
-        if (!_.isEmpty(this.data)) {
-            const {mean} = this.Mean()
-            let var_sum = 0
-            _.forEach(this.data, element => {
-                var_sum += (element - mean)**2
-            })
-            this.variance = {variance: var_sum/this.data_len}
-        }
-        return this.variance
-    }
-
-    /**
-     * @description the positive square root of Varaince
-     */
-    Deviation(): Measures {
-        return {deviation: Math.sqrt(this.Variance()['variance'])} 
     }
 }
