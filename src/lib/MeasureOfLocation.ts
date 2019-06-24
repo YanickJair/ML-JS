@@ -36,7 +36,8 @@ export class MeasureOfLocation {
             _.forEach(this.data, element => {
                 total_sum += element
             })
-            this.mean = {mean: total_sum/this.data_len}
+            const mean = total_sum/this.data_len
+            this.mean = {mean: mean.toFixed(2)}
         }
         return this.mean
     }
@@ -62,7 +63,7 @@ export class MeasureOfLocation {
                 const pos = [(this.data_len/2)-1, (this.data_len/2)]
                 _median = (sorted_data[pos[0]] + sorted_data[pos[1]])/2
             }
-            this.median = {median: _median}
+            this.median = {median: _median.toFixed(2)}
 
         }
         return this.median

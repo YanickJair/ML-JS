@@ -100,5 +100,13 @@ describe('Estimators', () => {
             expect(current_b0).to.be.equal(3.829633197588709)
         })
     })
+
+    describe('Variance', () => {
+        it('Should return 10.4299', () => {
+            const {mse} = estimator.MeanSquaredError()
+            expect(mse).to.be.equal(10.429)
+        })
+    })
+    
 })
 
